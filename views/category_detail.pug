@@ -1,0 +1,26 @@
+extends layout
+
+block content
+
+  h1 Category: #{category.name}
+
+  div(style='margin-left:20px;margin-top:20px')
+
+    h4 Categories
+
+    dl
+      each item in category_items
+        dt
+          a(href=item.url) #{item.name}
+        dd Price: #{item.price}$
+
+      else
+        p This genre has no items
+      hr
+      p
+        a(href=category.url+'/delete') Delete Category
+      p
+        a(href=category.url+'/update') Update Category
+      
+
+

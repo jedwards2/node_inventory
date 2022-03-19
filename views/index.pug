@@ -2,5 +2,15 @@ extends layout
 
 block content
   h1= title
-  p Welcome to #{title}
+  p Welcome to #[em The Pet Depository], a very basic Express website.
 
+  h1 Dynamic content
+
+  if error
+    p Error getting dynamic content.
+  else
+    p The inventory has the following record counts:
+
+    ul
+      li #[strong Pets:] !{data.item_count}
+      li #[strong Types:] !{data.category_count}
